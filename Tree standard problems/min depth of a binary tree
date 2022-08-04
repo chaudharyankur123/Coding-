@@ -1,0 +1,14 @@
+ int minDepth(TreeNode* root) {
+       if(root==NULL)
+           return 0;
+        if(root->left==NULL)
+            return 1+minDepth(root->right);
+         if(root->right==NULL)
+             return 1+minDepth(root->left);
+           int lh=minDepth(root->left);
+            int rh=minDepth(root->right);
+            return 1+min(lh,rh);
+        }
+        // this is not same as the max depth of binary tree because we have to check for the skew binary tree.
+        
+        //TimeComplexity=O(n)
