@@ -1,0 +1,12 @@
+int maxDepth(TreeNode* root) {
+        if(root==NULL){
+            return 0;
+        }
+        int lef=1+maxDepth(root->left);
+        int righ=1+maxDepth(root->right);
+        return max(lef,righ);
+        
+    }
+    
+    // time complexity=O(n)
+    // space complexity=O(n)
