@@ -1,0 +1,14 @@
+ int maxpathDemo(TreeNode* root,int&maxi){
+        if(root==NULL)
+            return 0;
+        int lh=max(0,maxpathDemo(root->left,maxi));
+        int rh=max(0,maxpathDemo(root->right,maxi));
+        maxi=max(maxi,lh+rh+root->val);
+        return max(lh,rh)+root->val;
+        
+    }
+    int maxPathSum(TreeNode* root) {
+        int maxi=INT_MIN;
+        maxpathDemo(root,maxi);
+        return maxi;
+    }
