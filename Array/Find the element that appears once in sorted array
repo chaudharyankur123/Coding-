@@ -1,0 +1,13 @@
+int findOnce(int arr[], int n)
+    {
+        //code here.
+        int ans=0;
+        for(int i=0;i<n;i++){
+            ans^=arr[i];  // taking the xor 
+            
+        }
+        return ans;
+    }
+    
+    // complexity=O(n)
+    // space complexity=O(1)
