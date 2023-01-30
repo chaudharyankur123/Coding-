@@ -1,0 +1,40 @@
+# this is most optimised approach:
+int findDuplicate(vector<int>& nums) {
+       int slow=nums[0];
+       int fast=nums[0];
+       do{
+           slow=nums[slow];
+           fast=nums[nums[fast]];
+       }while(slow!=fast);
+       fast=nums[0];
+       while(slow!=fast){
+           slow=nums[slow];
+           fast=nums[fast];
+       }
+       return slow;
+    }
+    
+    Time complexity: O(n)
+    Space Complexity: O(1)
+    
+    # this is using the sorting :
+    
+    int findDuplicate(vector<int>& nums) {
+       int ans;
+         sort(nums.begin(),nums.end());
+        
+        for(int i=1;i<nums.size();i++){
+            
+            if(nums[i]==nums[i-1])
+                ans = nums[i];
+        }
+          return ans;
+        
+        
+    }
+    
+    Time Complexity: O(Nlogn)
+    
+    
+    
+    
