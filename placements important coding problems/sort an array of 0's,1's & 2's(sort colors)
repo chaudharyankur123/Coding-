@@ -1,0 +1,23 @@
+ void sortColors(vector<int>& nums) {
+
+        // dutch national flag algorithm (in this we take the three pointers)
+        int low=0;
+        int mid=0;
+        int high=nums.size()-1;
+        while(mid<=high){
+            switch(nums[mid]){
+                case 0:
+                swap(nums[low++],nums[mid++]);
+                break;
+                case 1:
+                mid++;
+                break;
+                case 2:
+                swap(nums[mid],nums[high--]);
+                break;
+            }
+        }
+    }
+    //this problem is solved using the dutch national flag algorithm in which we solve using the three pointer concept.
+    // Time Complexity=O(N)
+    // Space complexity=O(1)
