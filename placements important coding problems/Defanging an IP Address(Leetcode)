@@ -1,0 +1,15 @@
+string defangIPaddr(string address) {
+        string ans="";
+        for(int i=0;i<address.size();i++){
+            if(address[i]=='.'){
+                ans=ans+"[.]";
+            }
+            else{
+                ans=ans+address[i];
+            }
+        }
+        return ans;
+    }
+    
+    // Defanging an IP address means converting '.' to [.]
+    // Main concept was this according to the meaning 
