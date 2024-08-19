@@ -1,0 +1,29 @@
+# code using BinarySearch:
+long long int floorSqrt(long long int n) {
+        // Your code goes here
+           long long low=0, high=n,ans=1;
+           while(low<=high){
+               long long mid=(low+high)/2;
+               long long t=mid*mid;
+               if(t==n)
+                   return mid;
+               if(t<n){
+                   low=mid+1;
+                   ans=mid;
+               }
+               else{
+                   high=mid-1;
+               }
+           }
+           return ans;
+    }
+
+# 2nd approach:
+
+int mySQRT(int x){
+long int i=1;
+while(i*i<=x){
+i++;
+}
+return i-1;
+}
