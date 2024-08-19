@@ -1,0 +1,21 @@
+#1st approach solution:
+int kthSmallest(vector<int> &arr, int k) {
+        map<int,int>mp;
+        for(int i=0;i<arr.size();i++){
+            mp[arr[i]]++;
+        }
+        for(auto i:mp){
+            k--;
+            if(k==0){
+                return i.first;
+            }
+        }
+        return 0;
+    
+    }
+
+# 2nd approach solution (Brute force approach)
+int kthSmallest(vector<int> &arr, int k) {
+sort(arr.begin(),arr.end());
+return arr[k-1];
+}
